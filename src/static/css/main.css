@@ -1,0 +1,60 @@
+h1{
+    font-size: 24px;
+    padding:10px;
+}
+
+.form-container {
+    background-color: #eeecec;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+#agenda{
+    display: flex;
+    flex-wrap: wrap;
+}
+#calendario{
+    width:280px;
+    margin:10px;
+}
+
+#mes{
+    display:grid;
+    grid-template-columns: repeat(7,1fr);
+}
+#reuniones{
+    background: burlywood;
+    min-width: 380px;
+    margin:10px;
+}
+.primerDia{
+    grid-column-start: var(--primerDiaMes);
+}
+
+.diaNombre{
+    background: #eee;
+    font-size:12px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    padding:4px;
+    text-align: center;
+}
+
+.dia{
+    margin:0px;
+    padding:10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.dia:hover{
+    border: 1px solid blue;
+}
+
+ul{
+    list-style: none;
+    text-align: center;
+    margin:0;
+    padding:0;
+}

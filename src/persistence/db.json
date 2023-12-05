@@ -1,0 +1,42 @@
+{
+  "students": [
+    {
+      "name": "bb",
+      "age": "12",
+      "subject": "bb",
+      "group": {
+        "0": {},
+        "1": {},
+        "2": {}
+      },
+      "id": 1
+    },
+    {
+      "name": "ccc",
+      "age": "122",
+      "subject": "c",
+      "group": {
+        "0": {},
+        "1": {},
+        "2": {}
+      },
+      "id": 2
+    }
+  ],
+  "teachers": [],
+  "meetings": [
+    {
+      "startHour": "19:25",
+      "endHour": "19:24",
+      "interval": "1",
+      "studentsPerInterval": "1",
+      "meetingDate": "2023-11-18",
+      "group": "1",
+      "subject": "dd",
+      "teacher": "dd",
+      "location": "dd",
+      "meetingName": "ddd",
+      "id": 1
+    }
+  ]
+}
