@@ -39,12 +39,17 @@
       "id": 1
     }
   ],
-  "palomas" : [],
-  "palonos" : [],
-  "glorias" : [],
-  "glorinos" : [],
-  "majosefas" : [],
-  "majosenos" : [],
-  "merfors" : [],
-  "merfonos" : []
+  "palomas": [],
+  "palonos": [],
+  "glorias": [],
+  "glorinos": [],
+  "majosefas": [
+    {
+      "name": "majos",
+      "id": 1
+    }
+  ],
+  "majosenos": [],
+  "merfors": [],
+  "merfonos": []
 }
