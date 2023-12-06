@@ -8,7 +8,7 @@ const editPalomaTitle = document.getElementById("editPaloma-title");
 
 const palomaAddBtn = document.getElementById("addPaloma-btn");
 
-export function createPalomaListItem(name, age, id) {
+export function createPalomaListItem(name, id) {
     const listItem = document.createElement("li");
     listItem.className = "list-group-item d-flex justify-content-between align-items-center";
 
@@ -66,32 +66,10 @@ export function displayEditPaloma(name, id) {
     editPalomaForm.addEventListener("submit", function (e) {
         e.preventDefault();
         const name = document.getElementById("name-paloma-edit").value;
-        const age = document.getElementById("age-paloma-edit").value;
-        const subject = document.getElementById("subject-paloma-edit").value;
-        const groups = [];
-
-
-        const g1 = document.getElementById("paloma-cbox-g1-edit");
-        const g2 = document.getElementById("paloma-cbox-g2-edit");
-        const g3 = document.getElementById("paloma-cbox-g3-edit");
-
-
-
-        if (g1.checked)
-            groups.push(1);
-
-        if (g2.checked)
-            groups.push(2);
-
-        if (g3.checked)
-            groups.push(3);
 
 
         const data = {
             name,
-            age,
-            subject,
-            groups
         }
 
         fetch(`http://localhost/palomas/${id}`, {
@@ -145,7 +123,7 @@ export function palomaRender() {
                 console.log(item);
                 console.log("array")
 
-                const listItem = createPalomaListItem(item.name, item.age, item.id);
+                const listItem = createPalomaListItem(item.name, item.id);
                 palomaList.appendChild(listItem);
                 palomaForm.reset();
 
@@ -157,29 +135,11 @@ export function palomaRender() {
     palomaForm.addEventListener("submit", function (e) {
         e.preventDefault();
         const name = document.getElementById("name-paloma").value;
-        const age = document.getElementById("age-paloma").value;
-        const subject = document.getElementById("subject-paloma").value;
-        const groups = [];
 
-        const g1 = document.getElementById("paloma-cbox-g1")
-        const g2 = document.getElementById("paloma-cbox-g2")
-        const g3 = document.getElementById("paloma-cbox-g3")
-
-        if (g1.checked)
-            groups.push(1);
-
-        if (g2.checked)
-            groups.push(2);
-
-        if (g3.checked)
-            groups.push(3);
 
 
         const data = {
-            name,
-            age,
-            subject,
-            groups
+            name
         }
 
         fetch("http://localhost/palomas/", {
@@ -194,7 +154,7 @@ export function palomaRender() {
                 console.log(datos)
                 console.log("POSTTT")
                 console.log(`datos.id = ${datos.id}`)
-                const listItem = createPalomaListItem(name, age, datos.id);
+                const listItem = createPalomaListItem(name, datos.id);
                 palomaList.appendChild(listItem);
                 palomaForm.reset();
             });
