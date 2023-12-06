@@ -45,7 +45,7 @@ export function createStudentListItem(name, age, id) {
     removeButton.addEventListener("click", () => {
         const id = listItem.getAttribute('customId');
         listItem.remove();
-        fetch(`http://localhost:3000/students/${id}`, {
+        fetch(`http://localhost/students/${id}`, {
             method : "DELETE"
         })
         .then(response => response.json())
@@ -83,7 +83,7 @@ export function displayEditStudent(name, id) {
             group
         }
 
-        fetch(`http://localhost:3000/students/${id}`, {
+        fetch(`http://localhost/students/${id}`, {
             method : "PUT",
             body : JSON.stringify(data),
             headers : {

@@ -39,7 +39,7 @@ function mostarReunionesDia(event) {
     // reunionesElement.textContent=`No hay reuniones en el dia ${dia}`;
 
     const meetingDate = `2023-11-${dia}`;
-    fetch(`http://localhost:3000/meetings?meetingDate=${meetingDate}`, {
+    fetch(`http://localhost/meetings?meetingDate=${meetingDate}`, {
         method: "GET"
     }).then(response => response.json())
         .then(data => {

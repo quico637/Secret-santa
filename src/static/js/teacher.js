@@ -35,18 +35,18 @@ export function createTeacherListItem(name, age, id) {
     // removeButton.className = "btn btn-danger";
 
     updateButton.addEventListener("click", () => {
-        
+
         displayEditTeacher(teacherInfo.textContent, id);
     });
 
     removeButton.addEventListener("click", () => {
         const id = listItem.getAttribute('customId');
         listItem.remove();
-        fetch(`http://localhost:3000/teachers/${id}`, {
-            method : "DELETE"
+        fetch(`http://localhost/teachers/${id}`, {
+            method: "DELETE"
         })
-        .then(response => response.json())
-        .then(datos => console.log(datos));
+            .then(response => response.json())
+            .then(datos => console.log(datos));
     });
 
     buttonsDiv.appendChild(updateButton);
@@ -75,11 +75,11 @@ export function displayEditTeacher(name, id) {
         const g2 = document.getElementById("teacher-cbox-g2-edit");
         const g3 = document.getElementById("teacher-cbox-g3-edit");
 
-        
+
 
         if (g1.checked)
             groups.push(1);
-        
+
         if (g2.checked)
             groups.push(2);
 
@@ -94,22 +94,22 @@ export function displayEditTeacher(name, id) {
             groups
         }
 
-        fetch(`http://localhost:3000/teachers/${id}`, {
-            method : "PUT",
-            body : JSON.stringify(data),
-            headers : {
-                "Content-type" : "application/json"
+        fetch(`http://localhost/teachers/${id}`, {
+            method: "PUT",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-type": "application/json"
             },
         })
-        .then(response => response.json())
-        .then(datos => {
-            console.log(datos)
-            console.log("PUTTT")
-            console.log(`datos.id = ${datos.id}`)
-            const listItem = createTeacherListItem(name, age, datos.id);
-            teacherList.appendChild(listItem);
-            teacherForm.reset();
-        });
+            .then(response => response.json())
+            .then(datos => {
+                console.log(datos)
+                console.log("PUTTT")
+                console.log(`datos.id = ${datos.id}`)
+                const listItem = createTeacherListItem(name, age, datos.id);
+                teacherList.appendChild(listItem);
+                teacherForm.reset();
+            });
 
         document.getElementById(`teacher-li-${id}`).remove()
     });
@@ -122,4 +122,85 @@ export function displayEditTeacher(name, id) {
 export function displayAddTeacher() {
     teacherAdd.style.display = "block";
     teacherEdit.style.display = "none";
+}
+
+
+
+export function teacherRender() {
+
+    /* TEACHER */
+
+
+    const teacherForm = document.getElementById("teacher-form");
+    const teacherList = document.getElementById("teacher-list");
+
+    const teachers = fetch("http://localhost/teachers/", {
+        method: "GET"
+    }).then(response => response.json())
+        .then(data => {
+
+            // Loop through each item in the array
+            data.forEach(item => {
+                // Do something with each item
+                console.log(item);
+                console.log("array")
+
+                const listItem = createTeacherListItem(item.name, item.age, item.id);
+                teacherList.appendChild(listItem);
+                teacherForm.reset();
+
+            });
+        })
+
+    console.log("olaa2222")
+
+    teacherForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("name-teacher").value;
+        const age = document.getElementById("age-teacher").value;
+        const subject = document.getElementById("subject-teacher").value;
+        const groups = [];
+
+        const g1 = document.getElementById("teacher-cbox-g1")
+        const g2 = document.getElementById("teacher-cbox-g2")
+        const g3 = document.getElementById("teacher-cbox-g3")
+
+        if (g1.checked)
+            groups.push(1);
+
+        if (g2.checked)
+            groups.push(2);
+
+        if (g3.checked)
+            groups.push(3);
+
+
+        const data = {
+            name,
+            age,
+            subject,
+            groups
+        }
+
+        fetch("http://localhost/teachers/", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-type": "application/json"
+            },
+        })
+            .then(response => response.json())
+            .then(datos => {
+                console.log(datos)
+                console.log("POSTTT")
+                console.log(`datos.id = ${datos.id}`)
+                const listItem = createTeacherListItem(name, age, datos.id);
+                teacherList.appendChild(listItem);
+                teacherForm.reset();
+            });
+    });
+
+
+    const teacherAddBtn = document.getElementById("addTeacher-btn");
+    teacherAddBtn.addEventListener("click", displayAddTeacher);
 }

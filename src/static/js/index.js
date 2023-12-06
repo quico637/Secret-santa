@@ -4,8 +4,7 @@ import {
 } from "./student.js";
 
 import {
-    createTeacherListItem,
-    displayAddTeacher
+    teacherRender
 } from "./teacher.js";
 
 import {
@@ -79,131 +78,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* TEACHER */
-
-
-    const teacherForm = document.getElementById("teacher-form");
-    const teacherList = document.getElementById("teacher-list");
-
-    const teachers = fetch("http://localhost/teachers/", {
-        method: "GET"
-    }).then(response => response.json())
-        .then(data => {
-
-            // Loop through each item in the array
-            data.forEach(item => {
-                // Do something with each item
-                console.log(item);
-                console.log("array")
-
-                const listItem = createTeacherListItem(item.name, item.age, item.id);
-                teacherList.appendChild(listItem);
-                teacherForm.reset();
-
-            });
-        })
-
-
-
-
-    teacherForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const name = document.getElementById("name-teacher").value;
-        const age = document.getElementById("age-teacher").value;
-        const subject = document.getElementById("subject-teacher").value;
-        const groups = [];
-
-        const g1 = document.getElementById("teacher-cbox-g1")
-        const g2 = document.getElementById("teacher-cbox-g2")
-        const g3 = document.getElementById("teacher-cbox-g3")
-
-        if (g1.checked)
-            groups.push(1);
-
-        if (g2.checked)
-            groups.push(2);
-
-        if (g3.checked)
-            groups.push(3);
-
-
-        const data = {
-            name,
-            age,
-            subject,
-            groups
-        }
-
-        fetch("http://localhost:3000/teachers/", {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-                "Content-type": "application/json"
-            },
-        })
-            .then(response => response.json())
-            .then(datos => {
-                console.log(datos)
-                console.log("POSTTT")
-                console.log(`datos.id = ${datos.id}`)
-                const listItem = createTeacherListItem(name, age, datos.id);
-                teacherList.appendChild(listItem);
-                teacherForm.reset();
-            });
-    });
-
-
+    console.log("olaa")
+    teacherRender();
 
 
     /* VIEWS */
 
 
     // JavaScript code to switch between views
-    const teacherView = document.getElementById("teacher-view");
-    const studentView = document.getElementById("student-view");
-    const agendaView = document.getElementById("agenda-view");
-    const presentacionView = document.getElementById("presentacion-view");
+    let teacherView = document.getElementById("teacher-view");
+    let studentView = document.getElementById("student-view");
+    let agendaView = document.getElementById("agenda-view");
+    let presentacionView = document.getElementById("presentacion-view");
 
-    function showStudentListView() {
-        teacherView.style.display = "block";
-        studentView.style.display = "none";
-        agendaView.style.display = "none";
-        presentacionView.style.display = "none";
+    let arr = []
+
+    arr.push(teacherView);
+    arr.push(studentView);
+    arr.push(agendaView);
+    arr.push(presentacionView);
+
+    
+
+    function showView(vieww) {
+        arr.forEach((v) => {
+            v.style.display = "none";
+        })
+        console.log(arr);
+        vieww.style.display = "block";
     }
 
-    function showStudentView() {
-        teacherView.style.display = "none";
-        studentView.style.display = "block";
-        agendaView.style.display = "none";
-        presentacionView.style.display = "none";
-    }
-
-    function showAgendaView() {
-        teacherView.style.display = "none";
-        studentView.style.display = "none";
-        agendaView.style.display = "block";
-        presentacionView.style.display = "none";
-    }
-
-    function showPresentacionView() {
-        teacherView.style.display = "none";
-        studentView.style.display = "none";
-        agendaView.style.display = "none";
-        presentacionView.style.display = "block";
-    }
 
     // Add event listeners to navigation links
     const studentListLink = document.querySelector('a[href="#student-view"]');
-    const addStudentLink = document.querySelector('a[href="#teacher-view"]');
+    const addTeacherLink = document.querySelector('a[href="#teacher-view"]');
     const agendaLink = document.querySelector('a[href="#agenda-view"]');
     const presentacionLink = document.querySelector('a[href="#presentacion-view"]');
 
-    studentListLink.addEventListener("click", showStudentListView);
-    addStudentLink.addEventListener("click", showStudentView);
-    agendaLink.addEventListener("click", showAgendaView);
-    presentacionLink.addEventListener("click", showPresentacionView);
+    studentListLink.addEventListener("click", () => showView(studentView));
+    addTeacherLink.addEventListener("click", () => showView(teacherView));
+    agendaLink.addEventListener("click", () => showView(agendaView));
+    presentacionLink.addEventListener("click", () => showView(presentacionView));
 
     // Show the student list view by default
-    showPresentacionView();
+    showView(presentacionView);
 
 
 
@@ -214,11 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const studentAddBtn = document.getElementById("addStudent-btn");
     studentAddBtn.addEventListener("click", displayAddStudent);
-
-    // inside teacher view
-
-    const teacherAddBtn = document.getElementById("addTeacher-btn");
-    teacherAddBtn.addEventListener("click", displayAddTeacher);
 
 
     /* CALENDAR */
@@ -259,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
             meetingName
         }
 
-        fetch("http://localhost:3000/meetings/", {
+        fetch("http://localhost/meetings/", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {

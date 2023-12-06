@@ -45,7 +45,7 @@ export function createMeetingListItem(name, startHour, endHour, id, date) {
     removeButton.addEventListener("click", () => {
         const id = listItem.getAttribute('customId');
         listItem.remove();
-        fetch(`http://localhost:3000/meetings/${id}`, {
+        fetch(`http://localhost/meetings/${id}`, {
             method: "DELETE"
         })
             .then(response => response.json())
@@ -96,7 +96,7 @@ export function displayEditMeeting(name, id, date) {
             meetingName
         }
 
-        fetch(`http://localhost:3000/meetings/${id}`, {
+        fetch(`http://localhost/meetings/${id}`, {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
