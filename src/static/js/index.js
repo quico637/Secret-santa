@@ -159,10 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Add event listeners to navigation links
-    const studentListLink = document.querySelector('a[href="#student-view"]');
-    const addTeacherLink = document.querySelector('a[href="#teacher-view"]');
-    const agendaLink = document.querySelector('a[href="#agenda-view"]');
+
     const presentacionLink = document.querySelector('a[href="#presentacion-view"]');
     
     const palomaLink = document.querySelector('a[href="#paloma-view"]');
@@ -174,9 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const merforLink = document.querySelector('a[href="#merfor-view"]');
     const merfonoLink = document.querySelector('a[href="#merfono-view"]');
 
-    studentListLink.addEventListener("click", () => showView(studentView));
-    addTeacherLink.addEventListener("click", () => showView(teacherView));
-    agendaLink.addEventListener("click", () => showView(agendaView));
+    
     presentacionLink.addEventListener("click", () => showView(presentacionView));
 
     palomaLink.addEventListener("click", () => showView(palomaView));
