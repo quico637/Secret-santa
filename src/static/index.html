@@ -35,6 +35,12 @@
         <li class="nav-item">
           <a class="nav-link" href="#paloma-view">Paloma</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#palono-view">Paloma ❌</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gloria-view">Gloria</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -475,18 +481,84 @@
 
   </div>
   </div>
-  
 
-  <div id="paloma-view" class="container mt-5" style="display: none;">
+
+<!-- PALOMA -->
+
+<div id="paloma-view" class="container mt-5" style="display: none;">
+  <div class="row">
+    <div class="col-md-6">
+      <div style="display: flex;">
+        <h1>Paloma List</h1>
+        <button type="button" class="btn btn-outline-primary" id="addPaloma-btn">+</button>
+      </div>
+
+      <div class="card" style="max-height: 300px; overflow-y: auto;">
+        <ul class="list-group list-group-flush" id="paloma-list">
+
+        </ul>
+      </div>
+    </div>
+
+
+  
+    <!-- Add Paloma Form -->
+    <div class="col-md-6" id="addPaloma-form">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 form-container">
+          <h2 id="addPaloma-title" class="mt-3">Add New Paloma</h2>
+          <form id="paloma-form">
+            <div class="row">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name-paloma" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Paloma</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Edit Paloma Form -->
+    <div id="editPaloma-form" class="col-md-6" id="addPaloma-form" style="display: none;">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 form-container">
+          <h2 id="editPaloma-title" class="mt-3">Edit New Paloma</h2>
+          <form id="paloma-form-edit">
+            <div class="row">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name-paloma-edit" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Edit Paloma</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- PALONO -->
+
+
+  <div id="palono-view" class="container mt-5" style="display: none;">
     <div class="row">
       <div class="col-md-6">
         <div style="display: flex;">
-          <h1>Paloma List</h1>
-          <button type="button" class="btn btn-outline-primary" id="addPaloma-btn">+</button>
+          <h1>Palono List</h1>
+          <button type="button" class="btn btn-outline-primary" id="addPalono-btn">+</button>
         </div>
 
         <div class="card" style="max-height: 300px; overflow-y: auto;">
-          <ul class="list-group list-group-flush" id="paloma-list">
+          <ul class="list-group list-group-flush" id="palono-list">
 
           </ul>
         </div>
@@ -494,20 +566,20 @@
 
 
     
-      <!-- Add Paloma Form -->
-      <div class="col-md-6" id="addPaloma-form">
+      <!-- Add Palono Form -->
+      <div class="col-md-6" id="addPalono-form">
         <div class="row justify-content-center">
           <div class="col-lg-8 form-container">
-            <h2 id="addPaloma-title" class="mt-3">Add New Paloma</h2>
-            <form id="paloma-form">
+            <h2 id="addPalono-title" class="mt-3">Regalos que Paloma no quiere</h2>
+            <form id="palono-form">
               <div class="row">
                 <div class="form-group">
                   <label for="name">Name:</label>
-                  <input type="text" class="form-control" id="name-paloma" required>
+                  <input type="text" class="form-control" id="name-palono" required>
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-primary">Add Paloma</button>
+              <button type="submit" class="btn btn-primary">Add Palono</button>
             </form>
           </div>
         </div>
@@ -515,20 +587,87 @@
 
 
 
-      <!-- Edit Paloma Form -->
-      <div id="editPaloma-form" class="col-md-6" id="addPaloma-form" style="display: none;">
+      <!-- Edit Palono Form -->
+      <div id="editPalono-form" class="col-md-6" id="addPalono-form" style="display: none;">
         <div class="row justify-content-center">
           <div class="col-lg-8 form-container">
-            <h2 id="editPaloma-title" class="mt-3">Edit New Paloma</h2>
-            <form id="paloma-form-edit">
+            <h2 id="editPalono-title" class="mt-3">Edit New Palono</h2>
+            <form id="palono-form-edit">
               <div class="row">
                 <div class="form-group">
                   <label for="name">Name:</label>
-                  <input type="text" class="form-control" id="name-paloma-edit" required>
+                  <input type="text" class="form-control" id="name-palono-edit" required>
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-primary">Edit Paloma</button>
+              <button type="submit" class="btn btn-primary">Edit Palono</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+
+
+
+
+  <!-- GLORIA -->
+
+  <div id="gloria-view" class="container mt-5" style="display: none;">
+    <div class="row">
+      <div class="col-md-6">
+        <div style="display: flex;">
+          <h1>Gloria List</h1>
+          <button type="button" class="btn btn-outline-primary" id="addGloria-btn">+</button>
+        </div>
+
+        <div class="card" style="max-height: 300px; overflow-y: auto;">
+          <ul class="list-group list-group-flush" id="gloria-list">
+
+          </ul>
+        </div>
+      </div>
+
+
+    
+      <!-- Add Gloria Form -->
+      <div class="col-md-6" id="addGloria-form">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 form-container">
+            <h2 id="addGloria-title" class="mt-3">Add New Gloria</h2>
+            <form id="gloria-form">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name-gloria" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Add Gloria</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Edit Gloria Form -->
+      <div id="editGloria-form" class="col-md-6" id="addGloria-form" style="display: none;">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 form-container">
+            <h2 id="editGloria-title" class="mt-3">Edit New Gloria</h2>
+            <form id="gloria-form-edit">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name-gloria-edit" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Edit Gloria</button>
             </form>
           </div>
         </div>

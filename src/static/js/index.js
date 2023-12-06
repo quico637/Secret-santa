@@ -13,7 +13,11 @@ import {
 } from "./meeting.js";
 
 import * as calendar from "./calendar.js";
+
 import { palomaRender } from "./paloma.js";
+import { palonoRender } from "./palono.js";
+
+import { gloriaRender } from "./gloria.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -88,6 +92,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     palomaRender();
 
+    // PALONO
+
+    palonoRender();
+
+    /* GLORIA */
+
+    gloriaRender();
+
 
     /* VIEWS */
 
@@ -98,6 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let agendaView = document.getElementById("agenda-view");
     let presentacionView = document.getElementById("presentacion-view");
     let palomaView = document.getElementById("paloma-view");
+    let palonoView = document.getElementById("palono-view");
+    let gloriaView = document.getElementById("gloria-view");
 
     let arr = []
 
@@ -106,6 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
     arr.push(agendaView);
     arr.push(presentacionView);
     arr.push(palomaView);
+    arr.push(palonoView);
+    arr.push(gloriaView);
 
     
 
@@ -123,13 +139,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const addTeacherLink = document.querySelector('a[href="#teacher-view"]');
     const agendaLink = document.querySelector('a[href="#agenda-view"]');
     const presentacionLink = document.querySelector('a[href="#presentacion-view"]');
+    
     const palomaLink = document.querySelector('a[href="#paloma-view"]');
+    const palonoLink = document.querySelector('a[href="#palono-view"]');
+    const gloriaLink = document.querySelector('a[href="#gloria-view"]');
 
     studentListLink.addEventListener("click", () => showView(studentView));
     addTeacherLink.addEventListener("click", () => showView(teacherView));
     agendaLink.addEventListener("click", () => showView(agendaView));
     presentacionLink.addEventListener("click", () => showView(presentacionView));
+
     palomaLink.addEventListener("click", () => showView(palomaView));
+    palonoLink.addEventListener("click", () => showView(palonoView));
+    gloriaLink.addEventListener("click", () => showView(gloriaView));
 
     // Show the student list view by default
     showView(presentacionView);
