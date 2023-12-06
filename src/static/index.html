@@ -53,6 +53,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#merfor-view">Merfor ✅</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#merfono-view">Merfor ❌</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -887,6 +890,8 @@
 
   <!-- MERFOR -->
 
+  <!-- MERFOR -->
+
   <div id="merfor-view" class="container mt-5" style="display: none;">
     <div class="row">
       <div class="col-md-6">
@@ -939,6 +944,69 @@
               </div>
 
               <button type="submit" class="btn btn-primary">Edit Merfor</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- MERFORNO -->
+
+  <div id="merfono-view" class="container mt-5" style="display: none;">
+    <div class="row">
+      <div class="col-md-6">
+        <div style="display: flex;">
+          <h1>Merfono List</h1>
+          <button type="button" class="btn btn-outline-primary" id="addMerfono-btn">+</button>
+        </div>
+
+        <div class="card" style="max-height: 300px; overflow-y: auto;">
+          <ul class="list-group list-group-flush" id="merfono-list">
+
+          </ul>
+        </div>
+      </div>
+
+
+
+      <!-- Add Merfono Form -->
+      <div class="col-md-6" id="addMerfono-form">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 form-container">
+            <h2 id="addMerfono-title" class="mt-3">Add New Merfono</h2>
+            <form id="merfono-form">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name-merfono" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Add Merfono</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Edit Merfono Form -->
+      <div id="editMerfono-form" class="col-md-6" id="addMerfono-form" style="display: none;">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 form-container">
+            <h2 id="editMerfono-title" class="mt-3">Edit New Merfono</h2>
+            <form id="merfono-form-edit">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name-merfono-edit" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Edit Merfono</button>
             </form>
           </div>
         </div>

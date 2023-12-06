@@ -22,6 +22,7 @@ import { glorinoRender } from "./glorino.js";
 import { majosefaRender } from "./majosefa.js";
 import { majosenoRender } from "./majoseno.js";
 import { merforRender } from "./merfor.js";
+import { merfonoRender } from "./merfono.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -112,6 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     merforRender();
 
+    merfonoRender();
+
 
     /* VIEWS */
 
@@ -128,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let majosefaView = document.getElementById("majosefa-view");
     let majosenoView = document.getElementById("majoseno-view");
     let merforView = document.getElementById("merfor-view");
+    let merfonoView = document.getElementById("merfono-view");
 
     let arr = []
 
@@ -142,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     arr.push(majosefaView);
     arr.push(majosenoView);
     arr.push(merforView);
+    arr.push(merfonoView);
 
     
 
@@ -167,6 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const majosefaLink = document.querySelector('a[href="#majosefa-view"]');
     const majosenoLink = document.querySelector('a[href="#majoseno-view"]');
     const merforLink = document.querySelector('a[href="#merfor-view"]');
+    const merfonoLink = document.querySelector('a[href="#merfono-view"]');
 
     studentListLink.addEventListener("click", () => showView(studentView));
     addTeacherLink.addEventListener("click", () => showView(teacherView));
@@ -180,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     majosefaLink.addEventListener("click", () => showView(majosefaView));
     majosenoLink.addEventListener("click", () => showView(majosenoView));
     merforLink.addEventListener("click", () => showView(merforView));
+    merfonoLink.addEventListener("click", () => showView(merfonoView));
 
     // Show the student list view by default
     showView(presentacionView);
