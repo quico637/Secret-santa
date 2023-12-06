@@ -40,7 +40,10 @@ function mostarReunionesDia(event) {
 
     const meetingDate = `2023-11-${dia}`;
     fetch(`http://localhost/meetings?meetingDate=${meetingDate}`, {
-        method: "GET"
+        method: "GET",
+        headers : {
+            "Access-Control-Allow-Origin": "*"
+        }
     }).then(response => response.json())
         .then(data => {
 
