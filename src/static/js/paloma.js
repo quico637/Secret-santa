@@ -43,7 +43,10 @@ export function createPalomaListItem(name, id) {
         const id = listItem.getAttribute('customId');
         listItem.remove();
         fetch(`http://localhost/palomas/${id}`, {
-            method: "DELETE"
+            method: "DELETE",
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
         })
             .then(response => response.json())
             .then(datos => console.log(datos));
@@ -76,7 +79,10 @@ export function displayEditPaloma(name, id) {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+
+                "Access-Control-Allow-Origin": "*"
+
             },
         })
             .then(response => response.json())
@@ -113,7 +119,10 @@ export function palomaRender() {
     const palomaList = document.getElementById("paloma-list");
 
     const palomas = fetch("http://localhost/palomas/", {
-        method: "GET"
+        method: "GET",
+        headers: {
+            "Access-Control-Allow-Origin": "*"
+        }
     }).then(response => response.json())
         .then(data => {
 
@@ -146,7 +155,10 @@ export function palomaRender() {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+
+                "Access-Control-Allow-Origin": "*"
+
             },
         })
             .then(response => response.json())

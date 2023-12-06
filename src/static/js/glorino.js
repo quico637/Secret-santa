@@ -43,7 +43,10 @@ export function createGlorinoListItem(name, id) {
         const id = listItem.getAttribute('customId');
         listItem.remove();
         fetch(`http://localhost/glorinos/${id}`, {
-            method: "DELETE"
+            method: "DELETE",
+            headers : {
+                "Access-Control-Allow-Origin": "*"
+            }
         })
             .then(response => response.json())
             .then(datos => console.log(datos));
@@ -76,7 +79,9 @@ export function displayEditGlorino(name, id) {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+                "Access-Control-Allow-Origin": "*"
+                
             },
         })
             .then(response => response.json())
@@ -113,7 +118,10 @@ export function glorinoRender() {
     const glorinoList = document.getElementById("glorino-list");
 
     const glorinos = fetch("http://localhost/glorinos/", {
-        method: "GET"
+        method: "GET",
+        headers : {
+            "Access-Control-Allow-Origin": "*"
+        }
     }).then(response => response.json())
         .then(data => {
 

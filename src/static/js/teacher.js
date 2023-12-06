@@ -43,7 +43,10 @@ export function createTeacherListItem(name, age, id) {
         const id = listItem.getAttribute('customId');
         listItem.remove();
         fetch(`http://localhost/teachers/${id}`, {
-            method: "DELETE"
+            method: "DELETE",
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
         })
             .then(response => response.json())
             .then(datos => console.log(datos));
@@ -98,7 +101,10 @@ export function displayEditTeacher(name, id) {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+
+                "Access-Control-Allow-Origin": "*"
+
             },
         })
             .then(response => response.json())
@@ -135,7 +141,10 @@ export function teacherRender() {
     const teacherList = document.getElementById("teacher-list");
 
     const teachers = fetch("http://localhost/teachers/", {
-        method: "GET"
+        method: "GET",
+        headers: {
+            "Access-Control-Allow-Origin": "*"
+        }
     }).then(response => response.json())
         .then(data => {
 
@@ -186,7 +195,10 @@ export function teacherRender() {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+
+                "Access-Control-Allow-Origin": "*"
+
             },
         })
             .then(response => response.json())

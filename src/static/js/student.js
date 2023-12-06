@@ -38,7 +38,7 @@ export function createStudentListItem(name, age, id) {
     // removeButton.className = "btn btn-danger";
 
     updateButton.addEventListener("click", () => {
-        
+
         displayEditStudent(studentInfo.textContent, id);
     });
 
@@ -46,10 +46,13 @@ export function createStudentListItem(name, age, id) {
         const id = listItem.getAttribute('customId');
         listItem.remove();
         fetch(`http://localhost/students/${id}`, {
-            method : "DELETE"
+            method: "DELETE",
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
         })
-        .then(response => response.json())
-        .then(datos => console.log(datos));
+            .then(response => response.json())
+            .then(datos => console.log(datos));
     });
 
     buttonsDiv.appendChild(updateButton);
@@ -63,7 +66,7 @@ export function createStudentListItem(name, age, id) {
 }
 
 export function displayEditStudent(name, id) {
-        
+
     editStudentTitle.setAttribute("customId", id);
     editStudentTitle.textContent = `Edit student ${name}`;
 
@@ -74,7 +77,7 @@ export function displayEditStudent(name, id) {
         const subject = document.getElementById("subject-edit").value;
 
         const group = document.getElementById("groupSelector-edit");
-   
+
 
         const data = {
             name,
@@ -84,21 +87,24 @@ export function displayEditStudent(name, id) {
         }
 
         fetch(`http://localhost/students/${id}`, {
-            method : "PUT",
-            body : JSON.stringify(data),
-            headers : {
-                "Content-type" : "application/json"
+            method: "PUT",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-type": "application/json",
+
+                "Access-Control-Allow-Origin": "*"
+
             },
         })
-        .then(response => response.json())
-        .then(datos => {
-            console.log(datos)
-            console.log("PUTTT")
-            console.log(`datos.id = ${datos.id}`)
-            const listItem = createStudentListItem(name, age, datos.id);
-            studentList.appendChild(listItem);
-            studentForm.reset();
-        });
+            .then(response => response.json())
+            .then(datos => {
+                console.log(datos)
+                console.log("PUTTT")
+                console.log(`datos.id = ${datos.id}`)
+                const listItem = createStudentListItem(name, age, datos.id);
+                studentList.appendChild(listItem);
+                studentForm.reset();
+            });
 
 
         document.getElementById(`student-li-${id}`).remove()

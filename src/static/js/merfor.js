@@ -43,7 +43,10 @@ export function createMerforListItem(name, id) {
         const id = listItem.getAttribute('customId');
         listItem.remove();
         fetch(`http://localhost/merfors/${id}`, {
-            method: "DELETE"
+            method: "DELETE",
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
         })
             .then(response => response.json())
             .then(datos => console.log(datos));
@@ -76,7 +79,10 @@ export function displayEditMerfor(name, id) {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+
+                "Access-Control-Allow-Origin": "*"
+
             },
         })
             .then(response => response.json())
@@ -113,7 +119,10 @@ export function merforRender() {
     const merforList = document.getElementById("merfor-list");
 
     const merfors = fetch("http://localhost/merfors/", {
-        method: "GET"
+        method: "GET",
+        headers : {
+            "Access-Control-Allow-Origin": "*"
+        }
     }).then(response => response.json())
         .then(data => {
 

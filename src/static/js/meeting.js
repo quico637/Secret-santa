@@ -46,7 +46,10 @@ export function createMeetingListItem(name, startHour, endHour, id, date) {
         const id = listItem.getAttribute('customId');
         listItem.remove();
         fetch(`http://localhost/meetings/${id}`, {
-            method: "DELETE"
+            method: "DELETE",
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
         })
             .then(response => response.json())
             .then(datos => console.log(datos));
@@ -100,7 +103,10 @@ export function displayEditMeeting(name, id, date) {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+
+                "Access-Control-Allow-Origin": "*"
+
             },
         })
             .then(response => response.json())
