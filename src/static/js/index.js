@@ -7,11 +7,13 @@ import {
     teacherRender
 } from "./teacher.js";
 
+
 import {
     displayAddMeeting
 } from "./meeting.js";
 
 import * as calendar from "./calendar.js";
+import { palomaRender } from "./paloma.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -82,6 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
     teacherRender();
 
 
+    /* PALOMA */
+
+    palomaRender();
+
+
     /* VIEWS */
 
 
@@ -90,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let studentView = document.getElementById("student-view");
     let agendaView = document.getElementById("agenda-view");
     let presentacionView = document.getElementById("presentacion-view");
+    let palomaView = document.getElementById("paloma-view");
 
     let arr = []
 
@@ -97,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     arr.push(studentView);
     arr.push(agendaView);
     arr.push(presentacionView);
+    arr.push(palomaView);
 
     
 
@@ -114,11 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const addTeacherLink = document.querySelector('a[href="#teacher-view"]');
     const agendaLink = document.querySelector('a[href="#agenda-view"]');
     const presentacionLink = document.querySelector('a[href="#presentacion-view"]');
+    const palomaLink = document.querySelector('a[href="#paloma-view"]');
 
     studentListLink.addEventListener("click", () => showView(studentView));
     addTeacherLink.addEventListener("click", () => showView(teacherView));
     agendaLink.addEventListener("click", () => showView(agendaView));
     presentacionLink.addEventListener("click", () => showView(presentacionView));
+    palomaLink.addEventListener("click", () => showView(palomaView));
 
     // Show the student list view by default
     showView(presentacionView);
