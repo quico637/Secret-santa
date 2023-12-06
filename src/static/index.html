@@ -33,16 +33,19 @@
           <a class="nav-link" href="#student-view">Teacher</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#paloma-view">Paloma</a>
+          <a class="nav-link" href="#paloma-view">Paloma ✅</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#palono-view">Paloma ❌</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#gloria-view">Gloria</a>
+          <a class="nav-link" href="#gloria-view">Gloria ✅</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#glorino-view">Gloria ❌</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#majosefa-view">Majosefa ✅</a>
         </li>
       </ul>
     </div>
@@ -289,38 +292,38 @@
       <!-- Add student form -->
       <div class="col-md-6" id="addStudent-form">
         <div class="row justify-content-center">
-            <div class="col-lg-9 form-container">
-                <h2 class="mt-3">Add New Student</h2>
-                <form id="student-form">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" class="form-control" id="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="age">Age:</label>
-                        <input type="number" class="form-control" id="age" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject:</label>
-                        <input type="text" class="form-control" id="subject" required>
-                    </div>
-                    <!-- Group Selector -->
-                    <div class="col-md-6 mb-3">
-                        <label for="groupSelector" class="form-label">Select Group</label>
-                        <select class="form-select" id="groupSelector" required>
-                            <option value="1">Group 1</option>
-                            <option value="2">Group 2</option>
-                            <option value="3">Group 3</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6 mb-3"> <!-- Use the remaining space for the button -->
-                        <button type="submit" class="btn btn-primary">Add Student</button>
-                    </div>
-                </form>
-            </div>
+          <div class="col-lg-9 form-container">
+            <h2 class="mt-3">Add New Student</h2>
+            <form id="student-form">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" required>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" class="form-control" id="subject" required>
+              </div>
+              <!-- Group Selector -->
+              <div class="col-md-6 mb-3">
+                <label for="groupSelector" class="form-label">Select Group</label>
+                <select class="form-select" id="groupSelector" required>
+                  <option value="1">Group 1</option>
+                  <option value="2">Group 2</option>
+                  <option value="3">Group 3</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3"> <!-- Use the remaining space for the button -->
+                <button type="submit" class="btn btn-primary">Add Student</button>
+              </div>
+            </form>
+          </div>
         </div>
-    </div>
-    
+      </div>
+
 
 
       <!-- Edit Student -->
@@ -486,70 +489,70 @@
   </div>
 
 
-<!-- PALOMA -->
+  <!-- PALOMA -->
 
-<div id="paloma-view" class="container mt-5" style="display: none;">
-  <div class="row">
-    <div class="col-md-6">
-      <div style="display: flex;">
-        <h1>Paloma List</h1>
-        <button type="button" class="btn btn-outline-primary" id="addPaloma-btn">+</button>
+  <div id="paloma-view" class="container mt-5" style="display: none;">
+    <div class="row">
+      <div class="col-md-6">
+        <div style="display: flex;">
+          <h1>Paloma List</h1>
+          <button type="button" class="btn btn-outline-primary" id="addPaloma-btn">+</button>
+        </div>
+
+        <div class="card" style="max-height: 300px; overflow-y: auto;">
+          <ul class="list-group list-group-flush" id="paloma-list">
+
+          </ul>
+        </div>
       </div>
 
-      <div class="card" style="max-height: 300px; overflow-y: auto;">
-        <ul class="list-group list-group-flush" id="paloma-list">
-
-        </ul>
-      </div>
-    </div>
 
 
-  
-    <!-- Add Paloma Form -->
-    <div class="col-md-6" id="addPaloma-form">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 form-container">
-          <h2 id="addPaloma-title" class="mt-3">Add New Paloma</h2>
-          <form id="paloma-form">
-            <div class="row">
-              <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name-paloma" required>
+      <!-- Add Paloma Form -->
+      <div class="col-md-6" id="addPaloma-form">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 form-container">
+            <h2 id="addPaloma-title" class="mt-3">Add New Paloma</h2>
+            <form id="paloma-form">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name-paloma" required>
+                </div>
               </div>
-            </div>
 
-            <button type="submit" class="btn btn-primary">Add Paloma</button>
-          </form>
+              <button type="submit" class="btn btn-primary">Add Paloma</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Edit Paloma Form -->
+      <div id="editPaloma-form" class="col-md-6" id="addPaloma-form" style="display: none;">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 form-container">
+            <h2 id="editPaloma-title" class="mt-3">Edit New Paloma</h2>
+            <form id="paloma-form-edit">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name-paloma-edit" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Edit Paloma</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
 
-
-
-    <!-- Edit Paloma Form -->
-    <div id="editPaloma-form" class="col-md-6" id="addPaloma-form" style="display: none;">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 form-container">
-          <h2 id="editPaloma-title" class="mt-3">Edit New Paloma</h2>
-          <form id="paloma-form-edit">
-            <div class="row">
-              <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name-paloma-edit" required>
-              </div>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Edit Paloma</button>
-          </form>
-        </div>
-      </div>
-    </div>
+  </div>
   </div>
 
-</div>
-</div>
-
-<!-- PALONO -->
+  <!-- PALONO -->
 
 
   <div id="palono-view" class="container mt-5" style="display: none;">
@@ -568,7 +571,7 @@
       </div>
 
 
-    
+
       <!-- Add Palono Form -->
       <div class="col-md-6" id="addPalono-form">
         <div class="row justify-content-center">
@@ -637,7 +640,7 @@
       </div>
 
 
-    
+
       <!-- Add Gloria Form -->
       <div class="col-md-6" id="addGloria-form">
         <div class="row justify-content-center">
@@ -700,7 +703,7 @@
       </div>
 
 
-    
+
       <!-- Add Glorino Form -->
       <div class="col-md-6" id="addGlorino-form">
         <div class="row justify-content-center">
@@ -736,6 +739,70 @@
               </div>
 
               <button type="submit" class="btn btn-primary">Edit Glorino</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+
+  <!-- MAJOSEFA -->
+
+  <div id="majosefa-view" class="container mt-5" style="display: none;">
+    <div class="row">
+      <div class="col-md-6">
+        <div style="display: flex;">
+          <h1>Majosefa List</h1>
+          <button type="button" class="btn btn-outline-primary" id="addMajosefa-btn">+</button>
+        </div>
+
+        <div class="card" style="max-height: 300px; overflow-y: auto;">
+          <ul class="list-group list-group-flush" id="majosefa-list">
+
+          </ul>
+        </div>
+      </div>
+
+
+
+      <!-- Add Majosefa Form -->
+      <div class="col-md-6" id="addMajosefa-form">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 form-container">
+            <h2 id="addMajosefa-title" class="mt-3">Add New Majosefa</h2>
+            <form id="majosefa-form">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name-majosefa" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Add Majosefa</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Edit Majosefa Form -->
+      <div id="editMajosefa-form" class="col-md-6" id="addMajosefa-form" style="display: none;">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 form-container">
+            <h2 id="editMajosefa-title" class="mt-3">Edit New Majosefa</h2>
+            <form id="majosefa-form-edit">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name-majosefa-edit" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Edit Majosefa</button>
             </form>
           </div>
         </div>

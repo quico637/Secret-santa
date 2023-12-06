@@ -19,6 +19,7 @@ import { palonoRender } from "./palono.js";
 
 import { gloriaRender } from "./gloria.js";
 import { glorinoRender } from "./glorino.js";
+import { majosefaRender } from "./majosefa.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -103,6 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     glorinoRender();
 
+    majosefaRender();
+
 
     /* VIEWS */
 
@@ -116,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let palonoView = document.getElementById("palono-view");
     let gloriaView = document.getElementById("gloria-view");
     let glorinoView = document.getElementById("glorino-view");
+    let majosefaView = document.getElementById("majosefa-view");
 
     let arr = []
 
@@ -127,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     arr.push(palonoView);
     arr.push(gloriaView);
     arr.push(glorinoView);
+    arr.push(majosefaView);
 
     
 
@@ -149,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const palonoLink = document.querySelector('a[href="#palono-view"]');
     const gloriaLink = document.querySelector('a[href="#gloria-view"]');
     const glorinoLink = document.querySelector('a[href="#glorino-view"]');
+    const majosefaLink = document.querySelector('a[href="#majosefa-view"]');
 
     studentListLink.addEventListener("click", () => showView(studentView));
     addTeacherLink.addEventListener("click", () => showView(teacherView));
@@ -159,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     palonoLink.addEventListener("click", () => showView(palonoView));
     gloriaLink.addEventListener("click", () => showView(gloriaView));
     glorinoLink.addEventListener("click", () => showView(glorinoView));
+    majosefaLink.addEventListener("click", () => showView(majosefaView));
 
     // Show the student list view by default
     showView(presentacionView);
