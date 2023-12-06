@@ -47,6 +47,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#majosefa-view">Majosefa ✅</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#majoseno-view">Majosefa ❌</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -751,6 +754,8 @@
 
   <!-- MAJOSEFA -->
 
+  <!-- MAJOSEFA -->
+
   <div id="majosefa-view" class="container mt-5" style="display: none;">
     <div class="row">
       <div class="col-md-6">
@@ -803,6 +808,69 @@
               </div>
 
               <button type="submit" class="btn btn-primary">Edit Majosefa</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- MAJOSENO -->
+
+  <div id="majoseno-view" class="container mt-5" style="display: none;">
+    <div class="row">
+      <div class="col-md-6">
+        <div style="display: flex;">
+          <h1>Majoseno List</h1>
+          <button type="button" class="btn btn-outline-primary" id="addMajoseno-btn">+</button>
+        </div>
+
+        <div class="card" style="max-height: 300px; overflow-y: auto;">
+          <ul class="list-group list-group-flush" id="majoseno-list">
+
+          </ul>
+        </div>
+      </div>
+
+
+
+      <!-- Add Majoseno Form -->
+      <div class="col-md-6" id="addMajoseno-form">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 form-container">
+            <h2 id="addMajoseno-title" class="mt-3">Add New Majoseno</h2>
+            <form id="majoseno-form">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name-majoseno" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Add Majoseno</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Edit Majoseno Form -->
+      <div id="editMajoseno-form" class="col-md-6" id="addMajoseno-form" style="display: none;">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 form-container">
+            <h2 id="editMajoseno-title" class="mt-3">Edit New Majoseno</h2>
+            <form id="majoseno-form-edit">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name-majoseno-edit" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Edit Majoseno</button>
             </form>
           </div>
         </div>
