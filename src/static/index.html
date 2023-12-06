@@ -50,6 +50,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#majoseno-view">Majosefa ❌</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#merfor-view">Merfor ✅</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -819,6 +822,8 @@
 
   <!-- MAJOSENO -->
 
+  <!-- MAJOSENO -->
+
   <div id="majoseno-view" class="container mt-5" style="display: none;">
     <div class="row">
       <div class="col-md-6">
@@ -871,6 +876,69 @@
               </div>
 
               <button type="submit" class="btn btn-primary">Edit Majoseno</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- MERFOR -->
+
+  <div id="merfor-view" class="container mt-5" style="display: none;">
+    <div class="row">
+      <div class="col-md-6">
+        <div style="display: flex;">
+          <h1>Merfor List</h1>
+          <button type="button" class="btn btn-outline-primary" id="addMerfor-btn">+</button>
+        </div>
+
+        <div class="card" style="max-height: 300px; overflow-y: auto;">
+          <ul class="list-group list-group-flush" id="merfor-list">
+
+          </ul>
+        </div>
+      </div>
+
+
+
+      <!-- Add Merfor Form -->
+      <div class="col-md-6" id="addMerfor-form">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 form-container">
+            <h2 id="addMerfor-title" class="mt-3">Add New Merfor</h2>
+            <form id="merfor-form">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name-merfor" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Add Merfor</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Edit Merfor Form -->
+      <div id="editMerfor-form" class="col-md-6" id="addMerfor-form" style="display: none;">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 form-container">
+            <h2 id="editMerfor-title" class="mt-3">Edit New Merfor</h2>
+            <form id="merfor-form-edit">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name-merfor-edit" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Edit Merfor</button>
             </form>
           </div>
         </div>
