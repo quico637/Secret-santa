@@ -41,6 +41,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#gloria-view">Gloria</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#glorino-view">Gloria ❌</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -616,6 +619,8 @@
 
   <!-- GLORIA -->
 
+  <!-- GLORIA -->
+
   <div id="gloria-view" class="container mt-5" style="display: none;">
     <div class="row">
       <div class="col-md-6">
@@ -668,6 +673,69 @@
               </div>
 
               <button type="submit" class="btn btn-primary">Edit Gloria</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- GLORINO -->
+
+  <div id="glorino-view" class="container mt-5" style="display: none;">
+    <div class="row">
+      <div class="col-md-6">
+        <div style="display: flex;">
+          <h1>Glorino List</h1>
+          <button type="button" class="btn btn-outline-primary" id="addGlorino-btn">+</button>
+        </div>
+
+        <div class="card" style="max-height: 300px; overflow-y: auto;">
+          <ul class="list-group list-group-flush" id="glorino-list">
+
+          </ul>
+        </div>
+      </div>
+
+
+    
+      <!-- Add Glorino Form -->
+      <div class="col-md-6" id="addGlorino-form">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 form-container">
+            <h2 id="addGlorino-title" class="mt-3">Add New Glorino</h2>
+            <form id="glorino-form">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name-glorino" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Add Glorino</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Edit Glorino Form -->
+      <div id="editGlorino-form" class="col-md-6" id="addGlorino-form" style="display: none;">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 form-container">
+            <h2 id="editGlorino-title" class="mt-3">Edit New Glorino</h2>
+            <form id="glorino-form-edit">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name-glorino-edit" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Edit Glorino</button>
             </form>
           </div>
         </div>
